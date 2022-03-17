@@ -10,12 +10,13 @@ pipeline {
 
   stages {
     
-    when {
-     branch "main"
-      }
+    
 
     stage('main branch') {
 
+      when {
+     branch "main"
+      }
       steps {
 
         echo "this is main branch"
