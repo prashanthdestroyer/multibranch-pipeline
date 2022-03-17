@@ -9,12 +9,41 @@ pipeline {
   }
 
   stages {
+    
+    when {
+     branch "main"
+      }
 
-    stage('test') {
+    stage('main branch') {
 
       steps {
 
-        echo "test"
+        echo "this is main branch"
+
+      }
+
+    }
+    stage('test branch') {
+
+      when{
+      branch "test"
+      }
+      steps {
+
+        echo "this is test branch"
+
+      }
+
+    }
+    
+    stage('feature branch') {
+
+      when{
+      branch "feature"
+      }
+      steps {
+
+        echo "this is feature branch"
 
       }
 
